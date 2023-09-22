@@ -15,7 +15,7 @@ const HomeCard = ({
   return (
     <div>
       {/* for mobile */}
-      <div className="p-6 md:hidden bg-white drop-shadow-lg rounded-lg mt-6">
+      <div className="p-6 md:hidden bg-white border rounded-lg mt-6">
         <div className=" flex items-center font-medium gap-4">
           <div>
             <Lottie

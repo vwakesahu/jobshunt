@@ -10,10 +10,22 @@ const RecentJobs = () => {
         subTitle="Lorem Ipsum is simply dummy text of the printing and typesetting industry.
       Lorem Ipsum has been is simply dummy text of the printing..."
         salary={"50,000"}
-        organization={'Polygon pvt. ltd.'}
-        shift={'10:00 - 14:00'}
-        requirements={'HTML, CSS, Reactjs'}
+        organization={"Polygon pvt ltd."}
+        shift={"10:00 - 14:00"}
+        requirements={"HTML, CSS, Reactjs"}
       />
+      <HomeCard
+        title="Marketing Intern"
+        type={"Full  Time"}
+        subTitle="Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+      Lorem Ipsum has been is simply dummy text of the printing..."
+        salary={"50,000"}
+        organization={"Bitcoin pvt ltd."}
+        shift={"10:00 - 14:00"}
+        requirements={"HTML, CSS, Reactjs"}
+      />
+      
+    
     </div>
   );
 };
