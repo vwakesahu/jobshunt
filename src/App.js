@@ -1,9 +1,13 @@
-import logo from './logo.svg';
+import HeroComponent from "./components/HeroComponent";
+import Navbar from "./components/Navbar";
 
 function App() {
   return (
-    <div className=' '>
-      Jobshunt
+    <div>
+      <Navbar />
+      <div className="md:p-8 md:px-48 p-7">
+        <HeroComponent />
+      </div>
     </div>
   );
 }

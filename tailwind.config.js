@@ -51,7 +51,7 @@ module.exports = {
         tight: '1.2', // Adjust the value as needed
       },
       colors: {
-        lightModeHeadingheadingColor: "#000000",
+        lightBlue: "#3284FE",
         lightModeTextColor: "#000000",
         lighttextGray: "#929292",
         lightPrimary: "#0D1BCF",
