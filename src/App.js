@@ -1,9 +1,11 @@
-import logo from './logo.svg';
+import Navbar from "./components/Navbar";
+import logo from "./logo.svg";
 
 function App() {
   return (
-    <div className=' '>
-      Jobshunt
+    <div>
+      <Navbar />
+      <div className="p-8 px-48"></div>
     </div>
   );
 }
