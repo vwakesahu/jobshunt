@@ -24,43 +24,39 @@ import img21 from "../img/trusted/21.png";
 import img22 from "../img/trusted/22.png";
 import img23 from "../img/trusted/23.png";
 
-
-
 const TrustedPartners = () => {
   return (
     <div>
-      <p className=" text-2xl font-semibold">Trusted Partners</p>
+      <p className=" text-2xl font-medium text-center">Trusted Partners</p>
       <div className=" md:mt-12 mt-8">
-        <Marquee>
-            <img src={img1} alt="img1" className=" h-14 md:h-24 ml-6"/>
-            <img src={img2} alt="img1" className=" h-14 md:h-24 ml-6"/>
-            <img src={img3} alt="img1" className=" h-14 md:h-24 ml-6"/>
-            <img src={img4} alt="img1" className=" h-14 md:h-24 ml-6"/>
-            <img src={img5} alt="img1" className=" h-14 md:h-24 ml-6"/>
-            <img src={img6} alt="img1" className=" h-14 md:h-24 ml-6"/>
-            <img src={img7} alt="img1" className=" h-14 md:h-24 ml-6"/>
-            <img src={img8} alt="img1" className=" h-14 md:h-24 ml-6"/>
-            <img src={img9} alt="img1" className=" h-14 md:h-24 ml-6"/>
-            <img src={img10} alt="img1" className=" h-14 md:h-24 ml-6"/>
-            <img src={img11} alt="img1" className=" h-14 md:h-24 ml-6"/>
-            <img src={img12} alt="img1" className=" h-14 md:h-24 ml-6"/>
-            <img src={img13} alt="img1" className=" h-14 md:h-24 ml-6"/>
+        <Marquee autoFill={true}>
+          <img src={img1} alt="img1" className=" h-14 md:h-24 ml-6" />
+          <img src={img2} alt="img1" className=" h-14 md:h-24 ml-6" />
+          <img src={img3} alt="img1" className=" h-14 md:h-24 ml-6" />
+          <img src={img4} alt="img1" className=" h-14 md:h-24 ml-6" />
+          <img src={img5} alt="img1" className=" h-14 md:h-24 ml-6" />
+          <img src={img6} alt="img1" className=" h-14 md:h-24 ml-6" />
+          <img src={img7} alt="img1" className=" h-14 md:h-24 ml-6" />
+          <img src={img8} alt="img1" className=" h-14 md:h-24 ml-6" />
+          <img src={img9} alt="img1" className=" h-14 md:h-24 ml-6" />
+          <img src={img10} alt="img1" className=" h-14 md:h-24 ml-6" />
+          <img src={img11} alt="img1" className=" h-14 md:h-24 ml-6" />
+          <img src={img12} alt="img1" className=" h-14 md:h-24 ml-6" />
+          <img src={img13} alt="img1" className=" h-14 md:h-24 ml-6" />
         </Marquee>
 
-
-        <Marquee className="mt-4 md:mt-8">
-            <img src={img14} alt="img1" className=" h-14 md:h-24 ml-6"/>
-            <img src={img15} alt="img1" className=" h-14 md:h-24 ml-6"/>
-            <img src={img16} alt="img1" className=" h-14 md:h-24 ml-6"/>
-            <img src={img17} alt="img1" className=" h-14 md:h-24 ml-6"/>
-            <img src={img18} alt="img1" className=" h-14 md:h-24 ml-6"/>
-            <img src={img19} alt="img1" className=" h-14 md:h-24 ml-6"/>
-            <img src={img20} alt="img1" className=" h-14 md:h-24 ml-6"/>
-            <img src={img21} alt="img1" className=" h-14 md:h-24 ml-6"/>
-            <img src={img22} alt="img1" className=" h-14 md:h-24 ml-6"/>
-            <img src={img23} alt="img1" className=" h-14 md:h-24 ml-6"/>
+        <Marquee className="mt-4 md:mt-8" autoFill={true} direction="right">
+          <img src={img14} alt="img1" className=" h-14 md:h-24 ml-6" />
+          <img src={img15} alt="img1" className=" h-14 md:h-24 ml-6" />
+          <img src={img16} alt="img1" className=" h-14 md:h-24 ml-6" />
+          <img src={img17} alt="img1" className=" h-14 md:h-24 ml-6" />
+          <img src={img18} alt="img1" className=" h-14 md:h-24 ml-6" />
+          <img src={img19} alt="img1" className=" h-14 md:h-24 ml-6" />
+          <img src={img20} alt="img1" className=" h-14 md:h-24 ml-6" />
+          <img src={img21} alt="img1" className=" h-14 md:h-24 ml-6" />
+          <img src={img22} alt="img1" className=" h-14 md:h-24 ml-6" />
+          <img src={img23} alt="img1" className=" h-14 md:h-24 ml-6" />
         </Marquee>
-
       </div>
     </div>
   );
