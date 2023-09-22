@@ -27,7 +27,7 @@ const HeroComponent = () => {
       <div className="pb-14 ">
         <Lottie
           animationData={HeroAnimation}
-          className="border md:border-none bg-white md:bg-transparent"
+          className="border md:border-none bg-white md:bg-transparent rounded-lg"
         />
       </div>
     </div>
