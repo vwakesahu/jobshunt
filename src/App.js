@@ -1,11 +1,13 @@
+import HeroComponent from "./components/HeroComponent";
 import Navbar from "./components/Navbar";
-import logo from "./logo.svg";
 
 function App() {
   return (
     <div>
       <Navbar />
-      <div className="p-8 px-48"></div>
+      <div className="md:p-8 md:px-48 p-7">
+        <HeroComponent />
+      </div>
     </div>
   );
 }
