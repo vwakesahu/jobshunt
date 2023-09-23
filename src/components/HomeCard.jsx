@@ -1,7 +1,6 @@
 import React from "react";
 import Lottie from "lottie-react";
 import CustomButton from "./CustomButton";
-import Avatar1 from "../img/avatars/av1.json";
 
 const HomeCard = ({
   title,
@@ -11,6 +10,7 @@ const HomeCard = ({
   organization,
   shift,
   requirements,
+  img,
 }) => {
   return (
     <div>
@@ -19,7 +19,7 @@ const HomeCard = ({
         <div className=" flex items-center font-medium gap-4">
           <div>
             <Lottie
-              animationData={Avatar1}
+              animationData={img}
               className="w-20 md:w-[15%] mb-3 border rounded-full"
             />
           </div>
@@ -47,10 +47,10 @@ const HomeCard = ({
       {/* for computer */}
       <div className="hidden md:flex mt-8">
         <div className=" flex-1 bg-white rounded-lg p-8">
-          <div className="flex gap-12 items-center">
+          <div className="flex gap-12 items-center justify-center ">
             <Lottie
-              animationData={Avatar1}
-              className="w-20 md:w-[15%] mb-3 border rounded-full"
+              animationData={img}
+              className="w-20 md:w-[15%] mb-3 border rounded-full overflow-hidden"
             />
             <div className=" flex flex-col">
               <div className=" flex justify-between">
