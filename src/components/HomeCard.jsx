@@ -20,7 +20,7 @@ const HomeCard = ({
           <div>
             <Lottie
               animationData={img}
-              className="w-20 md:w-[15%] mb-3 border rounded-full"
+              className="w-20 md:w-[15%] mb-3 border rounded-full overflow-hidden"
             />
           </div>
           <div>
