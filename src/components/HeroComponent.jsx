@@ -21,7 +21,7 @@ const HeroComponent = () => {
             bgColor={"lightBlue"}
             textColor={"white"}
           />
-          <CustomButton text={"Post Job"} />
+          <CustomButton text={"Post Job"} hoverColor={'lightBlue'}/>
         </div>
       </div>
       <div className="pb-14 ">
