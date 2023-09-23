@@ -1,5 +1,9 @@
 import React from "react";
 import HomeCard from "./HomeCard";
+
+import Avatar1 from "../img/avatars/av1.json";
+import Avatar2 from '../img/avatars/av2.json'
+
 const RecentJobs = () => {
   return (
     <div className=" mt-16">
@@ -13,6 +17,7 @@ const RecentJobs = () => {
         organization={"Polygon pvt ltd."}
         shift={"10:00 - 14:00"}
         requirements={"HTML, CSS, Reactjs"}
+        img={Avatar1}
       />
       <HomeCard
         title="Marketing Intern"
@@ -23,9 +28,8 @@ const RecentJobs = () => {
         organization={"Bitcoin pvt ltd."}
         shift={"10:00 - 14:00"}
         requirements={"HTML, CSS, Reactjs"}
+        img={Avatar2}
       />
-      
-    
     </div>
   );
 };
