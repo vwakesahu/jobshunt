@@ -1,3 +1,4 @@
+import Footer from "./components/Footer";
 import HeroComponent from "./components/HeroComponent";
 import Navbar from "./components/Navbar";
 import RecentJobs from "./components/RecentJobs";
@@ -11,7 +12,8 @@ function App() {
         <HeroComponent />
         <TrustedPartners />
         <RecentJobs />
-      </div>
+        
+      </div><Footer />
     </div>
   );
 }

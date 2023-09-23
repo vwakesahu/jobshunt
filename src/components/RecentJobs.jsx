@@ -24,8 +24,6 @@ const RecentJobs = () => {
         shift={"10:00 - 14:00"}
         requirements={"HTML, CSS, Reactjs"}
       />
-      
-    
     </div>
   );
 };

@@ -77,14 +77,18 @@ const HomeCard = ({
                   <p className=" font-semibold">{requirements}</p>
                 </div>
               </div>
-             <div className=" flex justify-between gap-10">
-             <p className=" text-gray-500 text-sm mt-3 w-[70%]">{subTitle}</p>
-             <CustomButton
-            text={"Apply Job"}
-            bgColor={"lightBlue"}
-            textColor={"white"}
-          />
-             </div>
+              <div className=" flex justify-between items-center gap-10">
+                <p className=" text-gray-500 text-sm mt-3 w-[70%]">
+                  {subTitle}
+                </p>
+                <div>
+                  <CustomButton
+                    text={"Apply Job"}
+                    bgColor={"lightBlue"}
+                    textColor={"white"}
+                  />
+                </div>
+              </div>
             </div>
           </div>
         </div>
