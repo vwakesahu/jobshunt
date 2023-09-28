@@ -11,7 +11,10 @@ const HomeCard = ({
   shift,
   requirements,
   img,
+  telegramUrl,
 }) => {
+  
+
   return (
     <div>
       {/* for mobile */}
@@ -40,6 +43,7 @@ const HomeCard = ({
             text={"Apply Job"}
             bgColor={"lightBlue"}
             textColor={"white"}
+            telegramUrl={telegramUrl}
           />
         </div>
       </div>
@@ -86,6 +90,8 @@ const HomeCard = ({
                     text={"Apply Job"}
                     bgColor={"lightBlue"}
                     textColor={"white"}
+                    telegramUrl={telegramUrl}
+
                   />
                 </div>
               </div>

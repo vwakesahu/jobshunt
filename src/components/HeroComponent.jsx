@@ -16,12 +16,17 @@ const HeroComponent = () => {
           post jobs for free for 7 days. That’s not an offer. That’s forever.
         </p>
         <div>
-          <CustomButton
-            text={"Find Job"}
-            bgColor={"lightBlue"}
-            textColor={"white"}
-          />
-          <CustomButton text={"Post Job"} hoverColor={'lightBlue'}/>
+          <a href="#">
+            <CustomButton
+              text={"Find Job"}
+              bgColor={"lightBlue"}
+              textColor={"white"}
+            />
+          </a>
+
+          <a href="#">
+            <CustomButton text={"Post Job"} hoverColor={"lightBlue"} />
+          </a>
         </div>
       </div>
       <div className="pb-14 ">
