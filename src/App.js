@@ -1,7 +1,7 @@
+import Demo from "./components/Demo";
 import Footer from "./components/Footer";
 import HeroComponent from "./components/HeroComponent";
 import Navbar from "./components/Navbar";
-import RecentJobs from "./components/RecentJobs";
 import SubscribeComponent from "./components/SubscribeComponent";
 import TrustedPartners from "./components/TrustedPartners";
 
@@ -12,7 +12,8 @@ function App() {
       <div className="md:p-8 md:px-48 p-7">
         <HeroComponent />
         <TrustedPartners />
-        <RecentJobs />
+        <Demo />
+
       </div>
       <SubscribeComponent />
       <Footer />
