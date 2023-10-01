@@ -1,12 +1,3 @@
-import {
-  BiLogoGmail,
-  BiPhone,
-  BiLocationPlus,
-  BiLogoMedium,
-  BiLogoLinkedin,
-  BiLogoTelegram,
-} from "react-icons/bi";
-import { FaXTwitter } from "react-icons/fa6";
 import SocialIcons from "./SocialIcons";
 
 const Footer = () => {
@@ -78,7 +69,7 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="mt-9 text-[12px] flex items-center justify-between gap-4 text-lightCard">
+        {/* <div className="mt-9 text-[12px] flex items-center justify-between gap-4 text-lightCard">
           <div>
             <p>Copyright © 2023 Jobshunt.</p> <p>All rights reserved.</p>
           </div>
@@ -96,7 +87,7 @@ const Footer = () => {
               <BiLogoTelegram alt="telegram" className="w-5" />
             </a>{" "}
           </div>
-        </div>
+        </div> */}
       </div>
     </div>
   );
