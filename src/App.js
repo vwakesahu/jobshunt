@@ -1,4 +1,4 @@
-import Demo from "./components/Demo";
+import Joblist from "./components/Joblist";
 import Footer from "./components/Footer";
 import HeroComponent from "./components/HeroComponent";
 import Navbar from "./components/Navbar";
@@ -12,7 +12,7 @@ function App() {
       <div className="md:p-8 md:px-48 p-7">
         <HeroComponent />
         <TrustedPartners />
-        <Demo />
+        <Joblist />
 
       </div>
       <SubscribeComponent />
