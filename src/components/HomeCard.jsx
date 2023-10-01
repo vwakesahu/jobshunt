@@ -5,7 +5,6 @@ import CustomButton from "./CustomButton";
 const HomeCard = ({
   title,
   subTitle,
-  salary,
   type,
   organization,
   shift,
@@ -32,18 +31,14 @@ const HomeCard = ({
           </div>
         </div>
         <p className=" text-justify text-gray-500 mt-6">{subTitle}</p>
-        <div className=" flex justify-between items-center mt-4">
-          <div>
-            <p>Salary:</p>
-            <p className=" text-lg font-semibold">
-              {salary}RS<span className=" text-sm font-medium">/month</span>
-            </p>
-          </div>
+        <div className="  mt-4">
+     
           <CustomButton
             text={"Apply Job"}
             bgColor={"lightBlue"}
             textColor={"white"}
             telegramUrl={telegramUrl}
+            width={"full"}
           />
         </div>
       </div>
@@ -60,7 +55,6 @@ const HomeCard = ({
               <div className=" flex justify-between">
                 <p className=" text-xl font-bold">{title}</p>
                 <p className=" text-lg font-semibold">
-                  {salary}RS<span className=" text-sm font-medium">/month</span>
                 </p>
               </div>
               <div className=" flex gap-10">

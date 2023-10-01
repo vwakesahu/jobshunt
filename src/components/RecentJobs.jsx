@@ -1,14 +1,14 @@
 import React from "react";
 import HomeCard from "./HomeCard";
-
 import Avatar1 from "../img/avatars/av1.json";
 import Avatar2 from "../img/avatars/av2.json";
 
 const RecentJobs = () => {
   return (
     <div className=" mt-16">
-      <p className=" text-2xl font-medium  text-center">Recent Jobs</p>
+    
 
+      <p className=" text-2xl font-medium  text-center">Recent Jobs</p>
       <HomeCard
         title="Account Executive Web3"
         type={"Part Time"}
