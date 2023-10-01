@@ -2,6 +2,7 @@ import Footer from "./components/Footer";
 import HeroComponent from "./components/HeroComponent";
 import Navbar from "./components/Navbar";
 import RecentJobs from "./components/RecentJobs";
+import SubscribeComponent from "./components/SubscribeComponent";
 import TrustedPartners from "./components/TrustedPartners";
 
 function App() {
@@ -12,8 +13,9 @@ function App() {
         <HeroComponent />
         <TrustedPartners />
         <RecentJobs />
-        
-      </div><Footer />
+      </div>
+      <SubscribeComponent />
+      <Footer />
     </div>
   );
 }
