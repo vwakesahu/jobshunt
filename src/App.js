@@ -1,22 +1,15 @@
-import Joblist from "./components/Joblist";
-import Footer from "./components/Footer";
-import HeroComponent from "./components/HeroComponent";
-import Navbar from "./components/Navbar";
-import SubscribeComponent from "./components/SubscribeComponent";
-import TrustedPartners from "./components/TrustedPartners";
+
+import { Route, Routes } from "react-router-dom";
+import Login from "./pages/Login";
+import Homepage from "./pages/Homepage";
 
 function App() {
   return (
     <div>
-      <Navbar />
-      <div className="md:p-8 md:px-48 p-7">
-        <HeroComponent />
-        <TrustedPartners />
-        <Joblist />
-
-      </div>
-      <SubscribeComponent />
-      <Footer />
+     <Routes >
+      <Route path="/login" element={<Login />} />
+      <Route path="/*" element={<Homepage />} />
+     </Routes>
     </div>
   );
 }
