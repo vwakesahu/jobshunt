@@ -38,9 +38,6 @@ const RecentJobs = () => {
 
   return (
     <div className=" mt-16">
-      <Link to='/addJob'>
-        <p className="text-2xl font-medium text-center">Add Jobs</p>
-      </Link>
       <p className="text-2xl font-medium text-center">Recent Jobs</p>
       {jobListings.map((job, index) => (
         <HomeCard

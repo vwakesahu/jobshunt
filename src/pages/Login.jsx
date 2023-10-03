@@ -16,9 +16,13 @@ const Login = () => {
     } = await signInWithPopup(firebaseAuth, provider);
     console.log(providerData);
 
-    dispatch({ type: actionType.SET_USER, user: providerData[0] });
+    if (providerData[0].email === "viveksahu_ce_2021@ltce.in") {
+      dispatch({ type: actionType.SET_USER, user: providerData[0] });
 
-    localStorage.setItem("user", JSON.stringify(providerData[0]));
+      localStorage.setItem("user", JSON.stringify(providerData[0]));
+    } else {
+      alert("Not an Admin");
+    }
   };
 
   const logout = () => {
@@ -30,20 +34,28 @@ const Login = () => {
     });
   };
   return (
-    <div className=" h-screen flex items-center justify-center" >
+    <div className=" h-screen flex items-center justify-center">
       {user ? (
         <div>
           <img
             src={user.photoURL}
             className="w-25  drop-shadow-xl cursor-pointer rounded-full"
           />
-          <p className="bg-red-500 p-4 text-white font-semibold rounded-lg cursor-pointer mt-4" onClick={logout}>
+          <p
+            className="bg-red-500 p-4 text-white font-semibold rounded-lg cursor-pointer mt-4"
+            onClick={logout}
+          >
             Logout
           </p>
-          <Link to='/'><p>Go to Homepage</p></Link>
+          <Link to="/">
+            <p>Go to Homepage</p>
+          </Link>
         </div>
       ) : (
-        <p className=" bg-lightBlue p-4 text-white font-semibold rounded-lg cursor-pointer" onClick={login}>
+        <p
+          className=" bg-lightBlue p-4 text-white font-semibold rounded-lg cursor-pointer"
+          onClick={login}
+        >
           Login With Google
         </p>
       )}
