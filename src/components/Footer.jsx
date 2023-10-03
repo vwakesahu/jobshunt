@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import SocialIcons from "./SocialIcons";
 
 const Footer = () => {
@@ -32,6 +33,9 @@ const Footer = () => {
           <ul className=" text-lighttextGray text-sm flex flex-col gap-3  ">
             <li>Browser Jobs</li>
             <li>Browser Categories </li>
+            <Link  to='/login'>
+              <li>Admin Login</li>
+            </Link>
           </ul>
         </div>
       </div>
@@ -64,6 +68,7 @@ const Footer = () => {
               <ul className=" text-lighttextGray text-sm flex flex-col gap-3  ">
                 <li>Browser Jobs</li>
                 <li>Browser Categories </li>
+                <li>Admin Login</li>
               </ul>
             </div>
           </div>

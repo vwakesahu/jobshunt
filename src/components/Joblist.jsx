@@ -9,6 +9,7 @@ import {
 import RecentJobs from "./RecentJobs";
 import FeaturedJobs from "./FeaturedJobs";
 import { useStateValue } from "../context/StateProvider";
+import AddJobForm from "./AddJobForm";
 
 const Joblist = () => {
   const location = useLocation();
@@ -32,7 +33,11 @@ const Joblist = () => {
       <div className=" flex flex-col justify-center items-center text-center">
         <p className="text-3xl font-semibold">New & Random Jobs</p>
         {user && (
-          <button className=" text-lightBlue text-2xl mt-4">Add New Job</button>
+          <Link to="/addJob">
+            <button className=" text-lightBlue text-2xl mt-4">
+              Add New Job
+            </button>
+          </Link>
         )}
 
         <p className="mt-6 md:w-[500px] text-lighttextGray">
@@ -60,6 +65,16 @@ const Joblist = () => {
               Featured Jobs
             </p>
           </Link>
+          {user && (
+            <Link to="/addJob" className="flex">
+              <p
+                onClick={handleRecentJobsClick}
+                className='border px-4 py-2 rounded-xl '
+              >
+                Add Jobs
+              </p>
+            </Link>
+          )}
         </div>
       </div>
 
@@ -67,6 +82,7 @@ const Joblist = () => {
         <Route path="/" element={<RecentJobs />} />
         <Route path="/recentJobs" element={<RecentJobs />} />
         <Route path="/featuredJobs" element={<FeaturedJobs />} />
+        <Route path="/addJob" element={<AddJobForm />} />
       </Routes>
     </div>
   );
