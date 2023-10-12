@@ -16,9 +16,11 @@ const Joblist = () => {
   const navigate = useNavigate();
   const [{ user }, dispatch] = useStateValue();
 
-  // Set the initial state to true for Recent Jobs
   const isRecentJobsActive =
     location.pathname === "/recentJobs" || location.pathname === "/";
+
+  const isAddJobActive = location.pathname === "/addJob";
+  const isFeaturedJobs = location.pathname === "/featuredJobs";
 
   const handleRecentJobsClick = () => {
     navigate("/recentJobs");
@@ -28,52 +30,45 @@ const Joblist = () => {
     navigate("/featuredJobs");
   };
 
+  const handleAddJobClick = () => {
+    navigate("/addJob");
+  };
+
   return (
     <div className="mt-36 flex flex-col justify-center items-center">
       <div className=" flex flex-col justify-center items-center text-center">
         <p className="text-3xl font-semibold">New & Random Jobs</p>
-        {user && (
-          <Link to="/addJob">
-            <button className=" text-lightBlue text-2xl mt-4">
-              Add New Job
-            </button>
-          </Link>
-        )}
 
         <p className="mt-6 md:w-[500px] text-lighttextGray">
           Post a job to tell us about your project. We'll quickly match you with
           the right freelancers.
         </p>
         <div className="mt-4 flex justify-center gap-5 shadow-lg p-2 rounded-xl">
-          <Link to="/recentJobs" className="flex">
-            <p
-              onClick={handleRecentJobsClick}
-              className={`px-4 py-2 rounded-xl ${
-                isRecentJobsActive ? "bg-lightBlue text-white" : ""
-              }`}
-            >
-              Recent Jobs
-            </p>
-          </Link>
-          <Link to="/featuredJobs" className="flex">
-            <p
-              onClick={handleFeaturedJobsClick}
-              className={`px-4 py-2 rounded-xl ${
-                !isRecentJobsActive ? "bg-lightBlue text-white" : ""
-              }`}
-            >
-              Featured Jobs
-            </p>
-          </Link>
+          <p
+            onClick={handleRecentJobsClick}
+            className={`px-4 py-2 rounded-xl cursor-pointer ${
+              isRecentJobsActive ? "bg-lightBlue text-white" : ""
+            }`}
+          >
+            Recent Jobs
+          </p>
+          <p
+            onClick={handleFeaturedJobsClick}
+            className={`px-4 py-2 rounded-xl cursor-pointer ${
+              isFeaturedJobs ? "bg-lightBlue text-white" : ""
+            }`}
+          >
+            Featured Jobs
+          </p>
           {user && (
-            <Link to="/addJob" className="flex">
-              <p
-                onClick={handleRecentJobsClick}
-                className='border px-4 py-2 rounded-xl '
-              >
-                Add Jobs
-              </p>
-            </Link>
+            <p
+              onClick={handleAddJobClick}
+              className={`border px-4 py-2 rounded-xl cursor-pointer ${
+                isAddJobActive ? "bg-lightBlue text-white" : ""
+              }`}
+            >
+              Add Jobs
+            </p>
           )}
         </div>
       </div>
