@@ -13,6 +13,8 @@ import { useStateValue } from "../context/StateProvider";
 
 const AddJobForm = () => {
   const [title, setTitle] = useState("");
+  const [organization, setOrganization] = useState("");
+  const [featured, setFeatured] = useState(false);
   const [description, setDescription] = useState("");
   const [type, setType] = useState("");
   const [imageAsset, setImageAsset] = useState(null);
@@ -22,6 +24,14 @@ const AddJobForm = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [{ jobData }, dispatch] = useStateValue();
   const [{ user }] = useStateValue();
+
+  const handleFeatureTrue = () => {
+    setFeatured(true);
+  };
+
+  const handleFeatureFalse = () => {
+    setFeatured(false);
+  };
 
   const uploadImage = (e) => {
     setIsLoading(true);
@@ -78,7 +88,13 @@ const AddJobForm = () => {
   const saveDetails = () => {
     setIsLoading(true);
     try {
-      if (!title || !description || !imageAsset || !type) {
+      if (
+        !title ||
+        !description ||
+        !imageAsset ||
+        !type ||
+        !organization
+      ) {
         setFields(true);
         setMsg("Required fields can't be empty");
         setAlertStatus("danger");
@@ -93,6 +109,7 @@ const AddJobForm = () => {
           imageURL: imageAsset,
           description: description,
           type: type,
+          featured: featured,
         };
         saveItem(data);
         setIsLoading(false);
@@ -135,11 +152,9 @@ const AddJobForm = () => {
   };
 
   return (
-
-   
     <div className="w-full flex flex-col gap-8 items-center justify-center">
-       <div className=" mt-16">
-      <p className="text-2xl font-medium text-center">Add a Job</p>
+      <div className=" mt-16">
+        <p className="text-2xl font-medium text-center">Add a Job</p>
       </div>
       {user ? (
         <div className="w-[90%] md:w-[50%] border border-gray-300 rounded-lg p-4 flex flex-col items-center justify-center gap-4">
@@ -154,14 +169,12 @@ const AddJobForm = () => {
               {msg}
             </p>
           )}
-          
 
           <div className="group flex justify-center items-center flex-col border-2 border-dotted border-gray-300 w-full h-225 md:h-340 cursor-pointer rounded-lg">
             {isLoading ? (
               <p>Loading...</p>
             ) : (
               <>
-              
                 {!imageAsset ? (
                   <>
                     <label className="w-full h-full flex flex-col items-center justify-center cursor-pointer">
@@ -212,27 +225,65 @@ const AddJobForm = () => {
             />
           </div>
 
-            <div className="w-full py-2 border-b border-gray-300 flex items-center gap-2">
-              <input
-                type="text"
-                required
-                value={description}
-                onChange={(e) => setDescription(e.target.value)}
-                placeholder="Add Description"
-                className="w-full h-full text-lg bg-transparent outline-none border-none placeholder:text-gray-400 text-textColor"
-              />
-            </div>
+          <div className="w-full py-2 border-b border-gray-300 flex items-center gap-2">
+            <input
+              type="text"
+              required
+              value={organization}
+              onChange={(e) => setOrganization(e.target.value)}
+              placeholder="Organiztion Name"
+              className="w-full h-full text-lg bg-transparent outline-none border-none placeholder:text-gray-400 text-textColor"
+            />
+          </div>
 
-            <div className="w-full py-2 border-b border-gray-300 flex items-center gap-2">
-              <input
-                type="text"
-                required
-                value={type}
-                onChange={(e) => setType(e.target.value)}
-                placeholder="Type"
-                className="w-full h-full text-lg bg-transparent outline-none border-none placeholder:text-gray-400 text-textColor"
-              />
-            </div>
+      
+
+          <div className="w-full py-2 border-b border-gray-300 flex items-center gap-2">
+            <input
+              type="text"
+              required
+              value={description}
+              onChange={(e) => setDescription(e.target.value)}
+              placeholder="Add Description"
+              className="w-full h-full text-lg bg-transparent outline-none border-none placeholder:text-gray-400 text-textColor"
+            />
+          </div>
+
+          <div className="w-full py-2 border-b border-gray-300 flex items-center gap-2">
+            <input
+              type="text"
+              required
+              value={type}
+              onChange={(e) => setType(e.target.value)}
+              placeholder="Type"
+              className="w-full h-full text-lg bg-transparent outline-none border-none placeholder:text-gray-400 text-textColor"
+            />
+          </div>
+
+          <div className="w-full">
+            <select
+              onChange={(e) => setFeatured(e.target.value)}
+              className="outline-none w-full text-base border-b border-gray-200 p-2 rounded-md cursor-pointer"
+            >
+              <option value="other" className="bg-white w-full">
+                Select Option
+              </option>
+
+              <option
+                className="text-base border-0 outline-none capitalize bg-white text-headingColor"
+                onClick={handleFeatureTrue}
+              >
+                True
+              </option>
+
+              <option
+                className="text-base border-0 outline-none capitalize bg-white text-headingColor"
+                onClick={handleFeatureFalse}
+              >
+                False
+              </option>
+            </select>
+          </div>
 
           <div className="flex items-center w-full">
             <button
