@@ -8,7 +8,6 @@ import TrustedPartners from "../components/TrustedPartners";
 const Homepage = () => {
   return (
     <div>
-      <Navbar />
       <div className="md:p-8 md:px-48 p-7">
         <HeroComponent />
         <TrustedPartners />
