@@ -16,7 +16,7 @@ const Login = () => {
     } = await signInWithPopup(firebaseAuth, provider);
     console.log(providerData);
 
-    if (providerData[0].email === "viveksahu_ce_2021@ltce.in") {
+    if (providerData[0].email === "viveksahu1762@gmail.com") {
       dispatch({ type: actionType.SET_USER, user: providerData[0] });
 
       localStorage.setItem("user", JSON.stringify(providerData[0]));
