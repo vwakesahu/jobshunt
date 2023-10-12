@@ -13,9 +13,8 @@ import { useStateValue } from "../context/StateProvider";
 
 const AddJobForm = () => {
   const [title, setTitle] = useState("");
-  const [calories, setCalories] = useState("");
-  const [price, setPrice] = useState("");
-  const [category, setCategory] = useState(null);
+  const [description, setDescription] = useState("");
+  const [type, setType] = useState("");
   const [imageAsset, setImageAsset] = useState(null);
   const [fields, setFields] = useState(false);
   const [alertStatus, setAlertStatus] = useState("danger");
@@ -79,7 +78,7 @@ const AddJobForm = () => {
   const saveDetails = () => {
     setIsLoading(true);
     try {
-      if (!title || !calories || !imageAsset || !price) {
+      if (!title || !description || !imageAsset || !type) {
         setFields(true);
         setMsg("Required fields can't be empty");
         setAlertStatus("danger");
@@ -92,8 +91,8 @@ const AddJobForm = () => {
           id: `${Date.now()}`,
           title: title,
           imageURL: imageAsset,
-          calories: calories,
-          price: price,
+          description: description,
+          type: type,
         };
         saveItem(data);
         setIsLoading(false);
@@ -122,9 +121,8 @@ const AddJobForm = () => {
   const clearData = () => {
     setTitle("");
     setImageAsset(null);
-    setCalories("");
-    setPrice("");
-    setCategory("Select Category");
+    setDescription("");
+    setType("");
   };
 
   const fetchData = async () => {
@@ -137,7 +135,12 @@ const AddJobForm = () => {
   };
 
   return (
-    <div className="w-full min-h-screen flex items-center justify-center">
+
+   
+    <div className="w-full flex flex-col gap-8 items-center justify-center">
+       <div className=" mt-16">
+      <p className="text-2xl font-medium text-center">Add a Job</p>
+      </div>
       {user ? (
         <div className="w-[90%] md:w-[50%] border border-gray-300 rounded-lg p-4 flex flex-col items-center justify-center gap-4">
           {fields && (
@@ -151,23 +154,14 @@ const AddJobForm = () => {
               {msg}
             </p>
           )}
-
-          <div className="w-full py-2 border-b border-gray-300 flex items-center gap-2">
-            <input
-              type="text"
-              required
-              value={title}
-              onChange={(e) => setTitle(e.target.value)}
-              placeholder="Give me a title..."
-              className="w-full h-full text-lg bg-transparent outline-none border-none placeholder:text-gray-400 text-textColor"
-            />
-          </div>
+          
 
           <div className="group flex justify-center items-center flex-col border-2 border-dotted border-gray-300 w-full h-225 md:h-340 cursor-pointer rounded-lg">
             {isLoading ? (
               <p>Loading...</p>
             ) : (
               <>
+              
                 {!imageAsset ? (
                   <>
                     <label className="w-full h-full flex flex-col items-center justify-center cursor-pointer">
@@ -207,14 +201,24 @@ const AddJobForm = () => {
             )}
           </div>
 
-          <div className="w-full flex flex-col md:flex-row items-center gap-3">
+          <div className="w-full py-2 border-b border-gray-300 flex items-center gap-2">
+            <input
+              type="text"
+              required
+              value={title}
+              onChange={(e) => setTitle(e.target.value)}
+              placeholder="Give me a title..."
+              className="w-full h-full text-lg bg-transparent outline-none border-none placeholder:text-gray-400 text-textColor"
+            />
+          </div>
+
             <div className="w-full py-2 border-b border-gray-300 flex items-center gap-2">
               <input
                 type="text"
                 required
-                value={calories}
-                onChange={(e) => setCalories(e.target.value)}
-                placeholder="Calories"
+                value={description}
+                onChange={(e) => setDescription(e.target.value)}
+                placeholder="Add Description"
                 className="w-full h-full text-lg bg-transparent outline-none border-none placeholder:text-gray-400 text-textColor"
               />
             </div>
@@ -223,18 +227,17 @@ const AddJobForm = () => {
               <input
                 type="text"
                 required
-                value={price}
-                onChange={(e) => setPrice(e.target.value)}
-                placeholder="Price"
+                value={type}
+                onChange={(e) => setType(e.target.value)}
+                placeholder="Type"
                 className="w-full h-full text-lg bg-transparent outline-none border-none placeholder:text-gray-400 text-textColor"
               />
             </div>
-          </div>
 
           <div className="flex items-center w-full">
             <button
               type="button"
-              className="ml-0 md:ml-auto w-full md:w-auto border-none outline-none bg-emerald-500 px-12 py-2 rounded-lg text-lg text-white font-semibold"
+              className="ml-0 md:ml-auto w-full md:w-auto border-none outline-none bg-lightBlue px-12 py-2 rounded-lg text-lg text-white font-semibold"
               onClick={saveDetails}
             >
               Save
