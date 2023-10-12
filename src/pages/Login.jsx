@@ -36,7 +36,7 @@ const Login = () => {
   return (
     <div className=" h-screen flex items-center justify-center">
       {user ? (
-        <div>
+        <div className=" flex items-center justify-center flex-col gap-3">
           <img
             src={user.photoURL}
             className="w-25  drop-shadow-xl cursor-pointer rounded-full"
@@ -47,9 +47,6 @@ const Login = () => {
           >
             Logout
           </p>
-          <Link to="/">
-            <p>Go to Homepage</p>
-          </Link>
         </div>
       ) : (
         <p
