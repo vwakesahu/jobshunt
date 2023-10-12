@@ -14,7 +14,10 @@ import {
       merge: true,
     });
   };
-  
+
+
+
+  //get all jobs
   export const getAllJobData = async () => {
     const items = await getDocs(
       query(collection(firestore, "jobData"), orderBy("id", "desc"))
