@@ -15,7 +15,14 @@ const RecentJobs = () => {
     <div className=" mt-16">
       <p className="text-2xl font-medium text-center">Recent Jobs</p>
 
-      <HomeCard data={jobData} />
+      <HomeCard data={jobData?.slice(0, 3)} />
+      <div className=" flex items-end justify-end">
+        <a href="/findjob">
+          <button className=" mr-0 mt-3 hover:text-lightPrimary cursor-pointer">
+            View All
+          </button>
+        </a>
+      </div>
     </div>
   );
 };
