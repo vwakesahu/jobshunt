@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Lottie from "lottie-react";
 import CustomButton from "./CustomButton";
+import NotFound from "../img/nonfound.svg";
 
 const HomeCard = ({
   title,
@@ -25,7 +26,7 @@ const HomeCard = ({
             className="p-6 md:hidden bg-white border rounded-lg mt-6"
             key={item?.id}
           >
-            <div className=" flex items-center justify-center font-medium gap-4">
+            <div className="flex items-center justify-center font-medium gap-4">
               <div>
                 <img
                   src={item?.imageURL}
@@ -41,7 +42,7 @@ const HomeCard = ({
               {item.description}
             </p>
             <div className="  mt-4">
-              <a href="https://t.me/shubh007123">
+              <a href="https://t.me/shubh007123" target="_blank">
                 <CustomButton
                   text={"Apply Job"}
                   bgColor={"lightBlue"}
@@ -53,21 +54,21 @@ const HomeCard = ({
           </div>
         ))
       ) : (
-        <div className="w-full flex flex-col items-center justify-center">
+        <div className="md:hidden w-full flex flex-col items-center justify-center">
           {/* <img src={NotFound} className="h-340" /> */}
-          <p className="text-xl text-headingColor font-semibold my-2">
-            Items Not Available
-          </p>
+          <img src={NotFound} alt="item not found" />
+          <p className=" text-xl mt-12">Jobs not found</p>
         </div>
       )}
+
       {/* for computer */}
 
       {data && data.length > 0 ? (
         data.map((item) => (
-          <div className="hidden md:flex mt-8" key={item?.id}>
-            <div className=" flex-1 bg-white rounded-lg p-8">
-              <div className="flex gap-12 items-center justify-center ">
-                <div className=" flex flex-col">
+          <div className="hidden w-full md:flex mt-8" key={item?.id}>
+            <div className="w-full bg-white rounded-lg p-8">
+              <div className="flex w-full gap-12 items-center justify-between">
+                <div className=" w-full flex flex-col">
                   <div className=" flex gap-7">
                     <img
                       src={item?.imageURL}
@@ -97,8 +98,8 @@ const HomeCard = ({
                     <p className=" text-lg font-semibold"></p>
                   </div>
 
-                  <div className=" flex justify-between items-center gap-10">
-                    <p className=" text-gray-500 text-sm mt-3 w-[70%]">
+                  {/* <div className=" w-full flex justify-between items-center gap-10">
+                    <p className=" w-full text-gray-500 text-sm mt-3 w-[70%]">
                       {item.description}
                     </p>
                     <div>
@@ -110,6 +111,17 @@ const HomeCard = ({
                         />
                       </a>
                     </div>
+                  </div> */}
+
+                  <div className=" w-full flex items-center justify-between">
+                    <p className=" w-[85%] mt-6 text-gray-600">
+                      {item.description}
+                    </p>
+                    <CustomButton
+                      text={"Apply Job"}
+                      bgColor={"lightBlue"}
+                      textColor={"white"}
+                    />
                   </div>
                 </div>
               </div>
@@ -117,11 +129,13 @@ const HomeCard = ({
           </div>
         ))
       ) : (
-        <div className="w-full flex flex-col items-center justify-center">
+        <div className="w-full hidden md:flex flex-col min-h-7xl items-center justify-center">
           {/* <img src={NotFound} className="h-340" /> */}
-          <p className="text-xl text-headingColor font-semibold my-2">
+          {/* <p className="text-xl text-headingColor font-semibold my-2">
             Items Not Available
-          </p>
+          </p> */}
+          <img src={NotFound} alt="item_not_found" />
+          <p className=" text-2xl mt-16">Job not found</p>
         </div>
       )}
     </div>
