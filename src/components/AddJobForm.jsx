@@ -10,7 +10,8 @@ import { storage } from "../firebase.config";
 import { getAllJobData, saveItem } from "../utils/firebaseFunctions";
 import { actionType } from "../context/reducer";
 import { useStateValue } from "../context/StateProvider";
-
+import Loader from "./Loader";
+import { MdDelete } from "react-icons/md";
 const AddJobForm = () => {
   const [title, setTitle] = useState("");
   const [organization, setOrganization] = useState("");
@@ -88,13 +89,7 @@ const AddJobForm = () => {
   const saveDetails = () => {
     setIsLoading(true);
     try {
-      if (
-        !title ||
-        !description ||
-        !imageAsset ||
-        !type ||
-        !organization
-      ) {
+      if (!title || !description || !imageAsset || !type || !organization) {
         setFields(true);
         setMsg("Required fields can't be empty");
         setAlertStatus("danger");
@@ -110,6 +105,7 @@ const AddJobForm = () => {
           description: description,
           type: type,
           featured: featured,
+          organization: organization,
         };
         saveItem(data);
         setIsLoading(false);
@@ -140,6 +136,7 @@ const AddJobForm = () => {
     setImageAsset(null);
     setDescription("");
     setType("");
+    setOrganization("")
   };
 
   const fetchData = async () => {
@@ -172,7 +169,7 @@ const AddJobForm = () => {
 
           <div className="group flex justify-center items-center flex-col border-2 border-dotted border-gray-300 w-full h-225 md:h-340 cursor-pointer rounded-lg">
             {isLoading ? (
-              <p>Loading...</p>
+              <Loader />
             ) : (
               <>
                 {!imageAsset ? (
@@ -205,7 +202,7 @@ const AddJobForm = () => {
                         className="absolute bottom-3 right-3 p-3 rounded-full bg-red-500 text-xl cursor-pointer outline-none hover:shadow-md  duration-500 transition-all ease-in-out"
                         onClick={deleteImage}
                       >
-                        DELETE
+                        <MdDelete className=" text-white" />
                       </button>
                     </div>
                   </>
@@ -236,8 +233,6 @@ const AddJobForm = () => {
             />
           </div>
 
-      
-
           <div className="w-full py-2 border-b border-gray-300 flex items-center gap-2">
             <input
               type="text"
@@ -266,7 +261,7 @@ const AddJobForm = () => {
               className="outline-none w-full text-base border-b border-gray-200 p-2 rounded-md cursor-pointer"
             >
               <option value="other" className="bg-white w-full">
-                Select Option
+                Is Featured
               </option>
 
               <option
