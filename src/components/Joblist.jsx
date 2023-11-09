@@ -38,7 +38,7 @@ const Joblist = () => {
     <div>
       <div className="mt-36 flex flex-col justify-center items-center">
         <div className=" flex flex-col justify-center items-center text-center">
-          <p className="text-3xl font-semibold">New & Random Jobs</p>
+          <p className="text-3xl font-semibold">New Jobs</p>
 
           <p className="mt-6 md:w-[500px] text-lighttextGray">
             Post a job to tell us about your project. We'll quickly match you
@@ -81,13 +81,7 @@ const Joblist = () => {
           <Route path="/addJob" element={<AddJobForm />} />
         </Routes>
       </div>
-      <div className=" flex items-end justify-end">
-        <Link to="/findjob">
-          <button className=" mr-0 mt-3 hover:text-lightPrimary cursor-pointer">
-            View All
-          </button>
-        </Link>
-      </div>
+     
     </div>
   );
 };
