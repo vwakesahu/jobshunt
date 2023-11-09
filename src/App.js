@@ -8,6 +8,7 @@ import { data } from "autoprefixer";
 import { getAllJobData } from "./utils/firebaseFunctions";
 import { actionType } from "./context/reducer";
 import { useEffect } from "react";
+import Footer from "./components/Footer";
 
 function App() {
   const [{ jobData }, dispatch] = useStateValue();
@@ -30,9 +31,9 @@ function App() {
       <Routes>
         <Route path="/login" element={<Login />} />
         <Route path="/*" element={<Homepage />} />
-
         <Route path="/findjob" element={<FindJob />} />
       </Routes>
+      <Footer />
     </div>
   );
 }
