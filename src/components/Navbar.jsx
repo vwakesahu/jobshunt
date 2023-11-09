@@ -22,11 +22,15 @@ const Navbar = () => {
         </Link>
 
         {/* for Desktop */}
-        <div className="md:visible hidden md:flex gap-5">
-          <button>Find Job</button>
-          <button className="md:p-3 bg-lightBlue text-white md:px-10 rounded-lg">
-            Post Job
-          </button>
+        <div className="md:visible hidden md:flex items-center  justify-center gap-5">
+          <Link to="/findJob">
+            <button>Find Job</button>
+          </Link>
+          <a href="https://t.me/Web3jobshunt" target="_blank">
+            <button className="md:p-3 bg-lightBlue text-white md:px-10 rounded-lg">
+              Post Job
+            </button>
+          </a>
         </div>
 
         {/* for mobile */}
@@ -36,10 +40,15 @@ const Navbar = () => {
         {isMenu && (
           <div className=" absolute right-4 top-14 bg-white rounded-lg shadow-md ">
             <ul>
-              <li className=" p-3 px-6">Find Job</li>
-              <li className="p-3 px-6 rounded-b-lg text-white bg-lightBlue">
-                Post Job
-              </li>
+              <Link to="/findJob">
+                <li className=" p-3 px-6">Find Job</li>
+              </Link>
+
+              <a href="https://t.me/Web3jobshunt" target="_blank">
+                <li className="p-3 px-6 rounded-b-lg text-white bg-lightBlue">
+                  Post Job
+                </li>
+              </a>
             </ul>
           </div>
         )}
