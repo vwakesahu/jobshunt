@@ -1,35 +1,28 @@
-import React from "react";
+import React, { useState } from "react";
 import HomeCard from "./HomeCard";
-
 import Avatar1 from "../img/avatars/av1.json";
-import Avatar2 from '../img/avatars/av2.json'
+import Avatar2 from "../img/avatars/av2.json";
+import AddJobForm from "./AddJobForm";
+import { Link } from "react-router-dom";
+import { useStateValue } from "../context/StateProvider";
 
 const RecentJobs = () => {
+  const [{ jobData }, dispatch] = useStateValue();
+
+
+
   return (
     <div className=" mt-16">
-      <p className=" text-2xl font-medium  text-center">Recent Jobs</p>
-      <HomeCard
-        title="Account Executive Web3"
-        type={"Part Time"}
-        subTitle="Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-      Lorem Ipsum has been is simply dummy text of the printing..."
-        salary={"50,000"}
-        organization={"Polygon pvt ltd."}
-        shift={"10:00 - 14:00"}
-        requirements={"HTML, CSS, Reactjs"}
-        img={Avatar1}
-      />
-      <HomeCard
-        title="Marketing Intern"
-        type={"Full  Time"}
-        subTitle="Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-      Lorem Ipsum has been is simply dummy text of the printing..."
-        salary={"50,000"}
-        organization={"Bitcoin pvt ltd."}
-        shift={"10:00 - 14:00"}
-        requirements={"HTML, CSS, Reactjs"}
-        img={Avatar2}
-      />
+      <p className="text-2xl font-medium text-center">Recent Jobs</p>
+
+      <HomeCard data={jobData?.slice(0, 3)} />
+      <div className=" flex items-end justify-end">
+        <a href="/findjob">
+          <button className=" mr-0 mt-3 hover:text-lightPrimary cursor-pointer">
+            View All
+          </button>
+        </a>
+      </div>
     </div>
   );
 };
