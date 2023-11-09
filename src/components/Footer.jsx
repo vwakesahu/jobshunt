@@ -16,7 +16,7 @@ const Footer = () => {
           <SocialIcons />
         </div>
 
-        <div className=" flex flex-col gap-5">
+        {/* <div className=" flex flex-col gap-5">
           <p>Company</p>
           <ul className=" text-lighttextGray text-sm flex flex-col gap-3  ">
             <li>About Us</li>
@@ -26,14 +26,16 @@ const Footer = () => {
             <li>Team</li>
             <li>Pricing</li>
           </ul>
-        </div>
+        </div> */}
 
         <div className=" flex flex-col gap-5">
           <p>For Jobs</p>
           <ul className=" text-lighttextGray text-sm flex flex-col gap-3  ">
-            <li>Browser Jobs</li>
-            <li>Browser Categories </li>
-            <Link  to='/login'>
+            <Link to={"/findJob"}>
+              <li>Browser Jobs</li>
+            </Link>
+
+            <Link to="/login">
               <li>Admin Login</li>
             </Link>
           </ul>
@@ -51,7 +53,7 @@ const Footer = () => {
           </div>
           <SocialIcons />
           <div className=" flex gap-10 mt-7">
-            <div className=" flex flex-col gap-5">
+            {/* <div className=" flex flex-col gap-5">
               <p>Company</p>
               <ul className=" text-lighttextGray text-sm flex flex-col gap-3  ">
                 <li>About Us</li>
@@ -61,14 +63,15 @@ const Footer = () => {
                 <li>Team</li>
                 <li>Pricing</li>
               </ul>
-            </div>
+            </div> */}
 
             <div className=" flex flex-col gap-5">
               <p>For Jobs</p>
               <ul className=" text-lighttextGray text-sm flex flex-col gap-3  ">
                 <li>Browser Jobs</li>
-                <li>Browser Categories </li>
-                <li>Admin Login</li>
+                <Link to="/login">
+                  <li>Admin Login</li>
+                </Link>
               </ul>
             </div>
           </div>
