@@ -14,7 +14,6 @@ const Homepage = () => {
         <Joblist />
       </div>
       <SubscribeComponent />
-      <Footer />
     </div>
   );
 };

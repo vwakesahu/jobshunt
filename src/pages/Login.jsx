@@ -20,6 +20,7 @@ const Login = () => {
       dispatch({ type: actionType.SET_USER, user: providerData[0] });
 
       localStorage.setItem("user", JSON.stringify(providerData[0]));
+      
     } else {
       alert("Not an Admin");
     }
