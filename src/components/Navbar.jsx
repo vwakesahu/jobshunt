@@ -18,7 +18,7 @@ const Navbar = () => {
           <div className=" flex items-center md:text-lg ">
             <img src={Logo} alt="logo" />
             <p>eb3jobshunt</p>
-          </div>{" "}
+          </div>
         </Link>
 
         {/* for Desktop */}
