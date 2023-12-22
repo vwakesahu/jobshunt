@@ -44,11 +44,11 @@ const Navbar = () => {
                 <li className=" p-3 px-6">Find Job</li>
               </Link>
 
-              <a href="https://t.me/Web3jobshunt" target="_blank">
+              <Link to="/post-job">
                 <li className="p-3 px-6 rounded-b-lg text-white bg-lightBlue">
                   Post Job
                 </li>
-              </a>
+              </Link>
             </ul>
           </div>
         )}
