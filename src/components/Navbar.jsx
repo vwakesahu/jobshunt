@@ -26,11 +26,11 @@ const Navbar = () => {
           <Link to="/findJob">
             <button>Find Job</button>
           </Link>
-          <a href="https://t.me/Web3jobshunt" target="_blank">
+          <Link to="/post-job">
             <button className="md:p-3 bg-lightBlue text-white md:px-10 rounded-lg">
               Post Job
             </button>
-          </a>
+          </Link>
         </div>
 
         {/* for mobile */}
