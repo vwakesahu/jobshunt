@@ -9,6 +9,7 @@ import { getAllJobData } from "./utils/firebaseFunctions";
 import { actionType } from "./context/reducer";
 import { useEffect } from "react";
 import Footer from "./components/Footer";
+import AddJobForm from "./components/AddJobForm";
 
 function App() {
   const [{ jobData }, dispatch] = useStateValue();
@@ -28,7 +29,9 @@ function App() {
   return (
     <div>
       <Navbar />
+
       <Routes>
+        <Route path="/post-job" element={<AddJobForm />} />
         <Route path="/login" element={<Login />} />
         <Route path="/*" element={<Homepage />} />
         <Route path="/findjob" element={<FindJob />} />

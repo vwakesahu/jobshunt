@@ -136,7 +136,7 @@ const AddJobForm = () => {
     setImageAsset(null);
     setDescription("");
     setType("");
-    setOrganization("")
+    setOrganization("");
   };
 
   const fetchData = async () => {
@@ -149,7 +149,7 @@ const AddJobForm = () => {
   };
 
   return (
-    <div className="w-full flex flex-col gap-8 items-center justify-center">
+    <div className="w-full flex flex-col gap-8 items-center justify-center mb-4">
       <div className=" mt-16">
         <p className="text-2xl font-medium text-center">Add a Job</p>
       </div>
