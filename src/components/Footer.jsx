@@ -35,9 +35,9 @@ const Footer = () => {
               <li>Browser Jobs</li>
             </Link>
 
-            <Link to="/login">
+            {/* <Link to="/login">
               <li>Admin Login</li>
-            </Link>
+            </Link> */}
           </ul>
         </div>
       </div>
@@ -68,10 +68,12 @@ const Footer = () => {
             <div className=" flex flex-col gap-5">
               <p>For Jobs</p>
               <ul className=" text-lighttextGray text-sm flex flex-col gap-3  ">
-                <li>Browser Jobs</li>
-                <Link to="/login">
-                  <li>Admin Login</li>
+                <Link to={"/findJob"}>
+                  <li>Browser Jobs</li>
                 </Link>
+                {/* <Link to="/login">
+                  <li>Admin Login</li>
+                </Link> */}
               </ul>
             </div>
           </div>

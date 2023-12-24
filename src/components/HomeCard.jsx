@@ -27,10 +27,10 @@ const HomeCard = ({
             key={item?.id}
           >
             <div className="flex items-center justify-center font-medium gap-4">
-              <div>
+              <div className="w-14 p-2 border rounded-full">
                 <img
                   src={item?.imageURL}
-                  className="w-14 md:w-[15%] mb-3 border rounded-full overflow-hidden"
+                  className=" md:w-[15%] overflow-hidden"
                 />
               </div>
               <div>
@@ -39,7 +39,7 @@ const HomeCard = ({
               </div>
             </div>
             <p className=" text-justify text-gray-500 mt-6">
-              {item.description}
+              {item.description.slice(0, 150) + "..."}
             </p>
             <div className="  mt-4">
               <a href="https://t.me/shubh007123" target="_blank">
@@ -69,11 +69,10 @@ const HomeCard = ({
             <div className="w-full bg-white rounded-lg p-8">
               <div className="flex w-full gap-12 items-center justify-between">
                 <div className=" w-full flex flex-col">
-                  <div className=" flex gap-7">
-                    <img
-                      src={item?.imageURL}
-                      className="w-20 mb-3 border rounded-full overflow-hidden"
-                    />
+                  <div className=" flex gap-7 ">
+                    <div className="border rounded-full w-24 h-24 flex items-center justify-center p-3">
+                      <img src={item?.imageURL} className=" overflow-hidden" />
+                    </div>
                     <div>
                       <p className=" text-xl font-bold">{item.title}</p>{" "}
                       <div className=" flex gap-10">
@@ -113,15 +112,18 @@ const HomeCard = ({
                     </div>
                   </div> */}
 
-                  <div className=" w-full flex items-center justify-between">
+                  <div className=" w-full flex items-center justify-between gap-6">
                     <p className=" w-[85%] mt-6 text-gray-600">
-                      {item.description}
+                      {item.description.slice(0, 250) + "..."}
                     </p>
-                    <CustomButton
+                    <button className="p-3 bg-lightBlue text-white md:px-10 rounded-lg">
+                      Apply Now
+                    </button>
+                    {/* <CustomButton
                       text={"Apply Job"}
                       bgColor={"lightBlue"}
                       textColor={"white"}
-                    />
+                    /> */}
                   </div>
                 </div>
               </div>

@@ -172,9 +172,6 @@ function FindJob() {
       )}
       {isAddJobActive ? (
         <div>
-          <p className="text-center text-xl md:text-[2rem] font-semibold mt-16">
-            Add Job
-          </p>
           <AddJobForm />
         </div>
       ) : (

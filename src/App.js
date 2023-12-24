@@ -1,14 +1,15 @@
 import { Route, Routes } from "react-router-dom";
-import Login from "./pages/Login";
+// import Login from "./pages/Login";
 import Homepage from "./pages/Homepage";
 import FindJob from "./components/FindJob";
 import Navbar from "./components/Navbar";
 import { useStateValue } from "./context/StateProvider";
-import { data } from "autoprefixer";
+// import { data } from "autoprefixer";
 import { getAllJobData } from "./utils/firebaseFunctions";
 import { actionType } from "./context/reducer";
 import { useEffect } from "react";
 import Footer from "./components/Footer";
+import AddJobForm from "./components/AddJobForm";
 
 function App() {
   const [{ jobData }, dispatch] = useStateValue();
@@ -28,8 +29,10 @@ function App() {
   return (
     <div>
       <Navbar />
+
       <Routes>
-        <Route path="/login" element={<Login />} />
+        <Route path="/post-job" element={<AddJobForm />} />
+        {/* <Route path="/login" element={<Login />} /> */}
         <Route path="/*" element={<Homepage />} />
         <Route path="/findjob" element={<FindJob />} />
       </Routes>

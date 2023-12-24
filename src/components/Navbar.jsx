@@ -18,7 +18,7 @@ const Navbar = () => {
           <div className=" flex items-center md:text-lg ">
             <img src={Logo} alt="logo" />
             <p>eb3jobshunt</p>
-          </div>{" "}
+          </div>
         </Link>
 
         {/* for Desktop */}
@@ -26,11 +26,11 @@ const Navbar = () => {
           <Link to="/findJob">
             <button>Find Job</button>
           </Link>
-          <a href="https://t.me/Web3jobshunt" target="_blank">
+          <Link to="/post-job">
             <button className="md:p-3 bg-lightBlue text-white md:px-10 rounded-lg">
               Post Job
             </button>
-          </a>
+          </Link>
         </div>
 
         {/* for mobile */}
@@ -44,11 +44,11 @@ const Navbar = () => {
                 <li className=" p-3 px-6">Find Job</li>
               </Link>
 
-              <a href="https://t.me/Web3jobshunt" target="_blank">
+              <Link to="/post-job">
                 <li className="p-3 px-6 rounded-b-lg text-white bg-lightBlue">
                   Post Job
                 </li>
-              </a>
+              </Link>
             </ul>
           </div>
         )}
