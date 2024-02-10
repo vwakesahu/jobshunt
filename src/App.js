@@ -10,6 +10,7 @@ import { actionType } from "./context/reducer";
 import { useEffect } from "react";
 import Footer from "./components/Footer";
 import AddJobForm from "./components/AddJobForm";
+import Demo from "./components/Demo";
 
 function App() {
   const [{ jobData }, dispatch] = useStateValue();
@@ -32,6 +33,8 @@ function App() {
 
       <Routes>
         <Route path="/post-job" element={<AddJobForm />} />
+        <Route path="/work-in-progress" element={<Demo />} />
+
         {/* <Route path="/login" element={<Login />} /> */}
         <Route path="/*" element={<Homepage />} />
         <Route path="/findjob" element={<FindJob />} />

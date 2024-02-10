@@ -3,7 +3,6 @@ import { GoogleAuthProvider, getAuth, signInWithPopup } from "firebase/auth";
 import { app } from "../firebase.config";
 import { useStateValue } from "../context/StateProvider";
 import { actionType } from "../context/reducer";
-import { Link } from "react-router-dom";
 
 const Login = () => {
   const firebaseAuth = getAuth(app);
